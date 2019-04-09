@@ -243,9 +243,10 @@ public class BackgammonClient extends JFrame implements Runnable, ActionListener
             }
 
             // get streams for input and output
-            //dices.throwTwoDices();
-            dices.setDices(6,6);
-            //dices.setDices(6, 6);
+            
+            //throw dices
+            dices.throwTwoDices();
+            
             dicesAndEatenField.setText("Dices: " + dices.getDices()[0] + ", " + dices.getDices()[1] +
                     "\nMove No." + (1+moves[0]/2)+
                     "\nMove 1:" +
@@ -1268,16 +1269,9 @@ public class BackgammonClient extends JFrame implements Runnable, ActionListener
             //setMark(  board[ row ][ column ],
             //        ( myMark.equals(Y_MARK) ? B_MARK : Y_MARK) ); // mark move
             displayMessage( "Opponent moved. Your turn." );
-            //dices.throwTwoDices();
-
-            if(myMark.equals("B")) {
-                dices.setDices(1, 1);
-                //dices.throwTwoDices();
-            }
-            else {
-                dices.throwTwoDices();
-                dices.setDices(6,6);
-            }
+            
+            //throw dices
+            dices.throwTwoDices();
 
             myTurn = true; // now this client's turn
             subEatenPieces = 0;
